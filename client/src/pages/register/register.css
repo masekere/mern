@@ -1,0 +1,110 @@
+.register {
+    background-color: #F2F3F7;
+    margin-top: 74px;
+    height: calc(100vh - 74px);
+    display: flex;
+
+}
+
+.register .container{
+    background-color: white;
+    z-index: 1;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: calc(100vh - 6rem);;
+    width: 50rem;
+    box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.1);
+    display: flex;
+}
+
+.register .left{
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    padding: 4rem;
+    flex: 0.5;
+    background-color: green;
+}
+.register .right{
+    padding: 2rem;
+    position: relative;
+    /* flex: 0.45; */
+    /* background-image: linear-gradient(160deg,#45b2ff 0%,#0047d6 100%); */
+}
+
+.register h2{
+    font-weight: 500;
+    font-size: 50px;
+}
+.register p{
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.register .msg{
+    display: flex;
+    align-items: center;
+    /* align-items: flex-start; */
+    margin-bottom: 4rem;
+}
+
+.register .btn{
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    cursor: pointer;
+    color: white;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 30px;
+    background-color: rgb(105, 142, 243);
+}
+
+.register .icon{
+    color: green;
+    height: 5rem;
+    width: 5rem;
+    /* width: 5rem; */
+}
+
+.register .input-flex{
+    display: flex;
+    gap: 10px;
+}
+
+:focus{outline: none;}
+input {color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;margin-top: 0rem;}
+select {
+    color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;margin-top: 0rem;
+}
+/* necessary to give position: relative to parent. */
+
+.register .col-3{float: left; width: 100%;margin-bottom: 1.1rem; position: relative;}
+
+.register .effect-20{border: 1px solid #ccc; padding: 1.5rem 14px;padding-bottom: .8rem;  transition: 0.4s; background: transparent;}
+.register .effect-20 ~ .focus-border:before,
+.register .effect-20 ~ .focus-border:after{content: ""; position: absolute; top: 0; left: 0; width: 0; height: 2px; background-color: #4caf50; transition: 0.3s;}
+.register .effect-20 ~ .focus-border:after{top: auto; bottom: 0; left: auto; right: 0;}
+.register .effect-20 ~ .focus-border i:before,
+.register .effect-20 ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #4caf50; transition: 0.4s;}
+.register .effect-20 ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0;}
+.register .effect-20:focus ~ .focus-border:before,
+.register .effect-20:focus ~ .focus-border:after,
+.register .has-content.effect-20 ~ .focus-border:before,
+.register .has-content.effect-20 ~ .focus-border:after{width: 100%; transition: 0.3s;}
+.register .effect-20:focus ~ .focus-border i:before,
+.register .effect-20:focus ~ .focus-border i:after,
+.register .has-content.effect-20 ~ .focus-border i:before,
+.register .has-content.effect-20 ~ .focus-border i:after{height: 100%; transition: 0.4s;}
+.register .effect-20 ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;font-size: 14px;}
+.register .effect-20:focus ~ label, .has-content.effect-20 ~ label{top: -14px; left: 0; font-size: 12px; color: #4caf50; transition: 0.3s;}
+.register select:hover{
+    background-color: rgb(227, 230, 228);
+}
+.register label{
+    color: #aaa;
+}

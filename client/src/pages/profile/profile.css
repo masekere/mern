@@ -1,0 +1,52 @@
+.profile{
+    background-color: #F2F3F7;
+    margin-top: 74px;
+    height: calc(100vh - 74px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile .card {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.1);
+    border-radius: 20px;
+    height: 80vh;
+    width: 80vw;
+}
+
+.profile .icon{
+    color: rgb(5, 31, 0);
+    height: 5rem;
+    width: 5rem;
+}
+
+:focus{outline: none;}
+input {color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;margin-top: 0rem;}
+
+/* necessary to give position: relative to parent. */
+
+.profile .col-3{float: left; width: 30%;margin-top: 1rem; position: relative;}
+
+.profile .effect-20{border: 1px solid #ccc; padding: 1.5rem 14px;padding-bottom: .8rem;  transition: 0.4s; background: transparent;}
+.profile .effect-20 ~ .focus-border:before,
+.profile .effect-20 ~ .focus-border:after{content: ""; position: absolute; top: 0; left: 0; width: 0; height: 2px; background-color: #4caf50; transition: 0.3s;}
+.profile .effect-20 ~ .focus-border:after{top: auto; bottom: 0; left: auto; right: 0;}
+.profile .effect-20 ~ .focus-border i:before,
+.profile .effect-20 ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #4caf50; transition: 0.4s;}
+.profile .effect-20 ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0;}
+.profile .effect-20:focus ~ .focus-border:before,
+.profile .effect-20:focus ~ .focus-border:after,
+.profile .has-content.effect-20 ~ .focus-border:before,
+.profile .has-content.effect-20 ~ .focus-border:after{width: 100%; transition: 0.3s;}
+.profile .effect-20:focus ~ .focus-border i:before,
+.profile .effect-20:focus ~ .focus-border i:after,
+.profile .has-content.effect-20 ~ .focus-border i:before,
+.profile .has-content.effect-20 ~ .focus-border i:after{height: 100%; transition: 0.4s;}
+.profile .effect-20 ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;font-size: 14px;}
+.profile .effect-20:focus ~ label, .has-content.effect-20 ~ label{top: -14px; left: 0; font-size: 12px; color: #4caf50; transition: 0.3s;}

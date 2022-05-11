@@ -1,0 +1,80 @@
+.login {
+    background-color: #F2F3F7;
+    margin-top: 74px;
+    height: calc(100vh - 74px);
+    display: flex;
+
+}
+
+.login .container{
+    z-index: 1;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 30rem;
+    width: 50rem;
+    box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.1);
+    display: flex;
+}
+
+.login .left{
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    padding: 4rem;
+    flex: 0.5;
+    background-color: green;
+}
+.login .right{
+    padding: 5rem;
+    /* flex: 0.45; */
+    /* background-image: linear-gradient(160deg,#45b2ff 0%,#0047d6 100%); */
+}
+
+.login h2{
+    font-weight: bold;
+    font-size: 70px;
+}
+.login p{
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.login .msg{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.login .btn{
+    display: block;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 30px;
+    background-color: rgb(105, 142, 243);
+    margin-left: auto;
+}
+
+.login .icon{
+    color: green;
+    height: 5rem;
+    width: 5rem;
+    /* width: 5rem; */
+}
+:focus{outline: none;}
+
+input {color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;margin-top: 1rem;}
+
+.login .col-3{float: left; width: 100%; margin: 1rem 3%; position: relative;}
+
+.login .effect-17{border: 0; padding: .7rem 0; border-bottom: 1px solid #ccc; background-color: transparent;}
+
+.login .effect-17 ~ .focus-border{position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #4caf50; transition: 0.4s;}
+.login .effect-17:focus ~ .focus-border,
+.login .has-content.effect-17 ~ .focus-border{width: 100%; transition: 0.4s; left: 0;}
+.login .effect-17 ~ label{position: absolute; left: 0; width: 100%; top: -.3rem; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.login .effect-17:focus ~ label, .has-content.effect-17 ~ label{top: -.6rem; font-size: 14px; color: #4caf50; transition: 0.3s;}
