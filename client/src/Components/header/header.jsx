@@ -20,6 +20,7 @@ export default function Header() {
     function isActive(pathName) {
         return path === pathName ? "active" : ""
     }
+
     return (
         <header className="header">
             <nav>

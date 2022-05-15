@@ -5,15 +5,19 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import io from "socket.io-client";
-const socket = io.connect("http://localhost:3001");
 
 export default function Learning() {
     const navigate = useNavigate()
+    const [socket, setSocket] = useState();
     const [messageList, setMessageList] = useState([]);
     const [onlineUsers, setOnlineUsers] = useState([]);
     const [start, setStart] = useState(false);
     const currentMessage = useRef()
     const { user } = useSelector((state) => state.auth)
+
+    useEffect(()=>{
+        setSocket(io.connect("http://localhost:3001"));
+    },[])
 
     const sendMessage = async () => {
         const msg = currentMessage.current.value;
@@ -33,7 +37,7 @@ export default function Learning() {
         if (!user) {
             navigate('/login')
         }
-        socket.on("connected", data => {
+        socket?.on("connected", data => {
             setMessageList(data.messages);
             socket.emit("connection-data", {
                 id: data.id,
@@ -42,26 +46,29 @@ export default function Learning() {
             // console.log(data.id,user.username);
             setStart(data.start)
         })
-        socket.on("start", (start) => {
+        socket?.on("start", (start) => {
             setStart(start)
         })
-        socket.on("online-users", (users) => {
+        socket?.on("online-users", (users) => {
             setOnlineUsers(users);
         })
-        socket.on("receive-message", (msg) => {
-            setMessageList((list) => {
-                if (list[list.length - 1] !== msg) {
-                    return [...list, msg]
-                }
-                return [...list]
-            }
-            );
+        socket?.on("receive-message", (msg) => {
+            setMessageList((list) => [...list, msg]);
 
         });
-        socket.on("disconnected", (users) => {
+        socket?.on("disconnected", (users) => {
             setOnlineUsers(users)
         })
     }, [socket]);
+
+    if(!start) return (
+        <div className="before-time">
+            <h1>hi {user.username}</h1>
+            <h1>Welcome to the platform</h1>
+            <h1>To learn shona language</h1>
+            <h1>Lesson resumes at {user.time}</h1>
+        </div>
+    )
 
     return (
         <div className="learning">
